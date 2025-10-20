@@ -7,6 +7,8 @@ public class App {
         ArrayList<Producto> productos = new ArrayList<Producto>();
         int opcionUsuario;        
         Scanner entrada = new Scanner(System.in);
+        //Cargo algunos productos
+        cargarProductosRelleno(productos);
         //Inicio del loop
         while(true){        
             mostrarMenu();
@@ -18,7 +20,7 @@ public class App {
                 } 
                 case 1 -> agregarProducto(entrada, productos);  
                 case 2 -> editarProducto(entrada, productos);     
-                case 3 -> listarProductos(productos);    
+                case 3 -> listarProductos(entrada, productos);    
                 case 4 -> eliminarProducto(entrada, productos);
                 default -> System.out.println(Colores.ROJO+"La opción ingresada no es válida."+Colores.RESET);                    
             }
@@ -67,10 +69,26 @@ public class App {
         }
         return prod;
     }
-    public static void listarProductos(ArrayList<Producto> productos){
-        for(Producto p: productos){
-            System.out.println(Colores.AZUL+p+Colores.RESET);
+    public static void listarProductos(Scanner entrada, ArrayList<Producto> productos){
+        if(productos.isEmpty()){
+            System.out.println(Colores.AMARILLO + "No hay productos para mostrar." + Colores.RESET);
+            return;
         }
+        
+        System.out.println(Colores.VERDE_CLARO + "-----------------------------------------------------" + Colores.RESET);
+        System.out.printf("%-5s %-20s %-10s %-10s%n", "ID", "Nombre", "Precio", "Stock");
+        System.out.println(Colores.VERDE_CLARO + "-----------------------------------------------------" + Colores.RESET);
+        
+        for(Producto p : productos){
+            System.out.printf(Colores.AZUL + "%-5d %-20s %-10.2f %-10d%n" + Colores.RESET, 
+                            p.getIdProducto(), p.getNombre(), p.getPrecio(), p.getStock());
+        }
+        
+        System.out.println(Colores.VERDE_CLARO + "-----------------------------------------------------" + Colores.RESET);
+        System.out.println("Presione Enter para continuar...");
+        if (entrada.hasNextLine()) entrada.nextLine();
+        entrada.nextLine(); // Espera a que el usuario presione Enter
+        limpiarPantalla();
     }
     public static void eliminarProducto(Scanner entrada, ArrayList<Producto> productos){
         int idProducto;
@@ -195,6 +213,18 @@ public class App {
                 System.out.println("No se encontró el producto con el id "+idProducto+".");
             }
         }
+    }
+    public static void limpiarPantalla(){
+        for(int i = 0; i < 20; i++){
+            System.out.println();
+        }
+    }
+    public static void cargarProductosRelleno(ArrayList<Producto> productos){
+        productos.add(new Producto("Papa", 10D, 300));
+        productos.add(new Producto("Tomate", 15D, 150));
+        productos.add(new Producto("Lechuga", 8.5D, 200));
+        productos.add(new Producto("Zanahoria", 12D, 180));
+        productos.add(new Producto("Cebolla", 9.5D, 220));
     }
 }
  
