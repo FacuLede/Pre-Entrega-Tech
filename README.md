@@ -54,9 +54,10 @@ Objeto `ProductResponse` creado.
 
 ``` json
 {
-  "name": "Nuevo nombre",
-  "description": "Nueva descripción",
-  "price": 1500.0
+  "name": "Zanahoria",
+  "price": 60.0,
+  "stock": 90,
+  "description": "Hortaliza"
 }
 ```
 
