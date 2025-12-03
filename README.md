@@ -67,5 +67,3 @@ Objeto `ProductResponse` actualizado.
 
 **DELETE** `/api/products/{id}`
 
-**Respuesta:**\
-Código 200 o 204 sin contenido.
