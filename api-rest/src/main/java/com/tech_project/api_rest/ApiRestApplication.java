@@ -1,4 +1,4 @@
-package com.tech_proyect.api_rest;
+package com.tech_project.api_rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

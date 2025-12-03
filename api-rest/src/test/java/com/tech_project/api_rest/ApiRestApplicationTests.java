@@ -1,4 +1,4 @@
-package com.tech_proyect.api_rest;
+package com.tech_project.api_rest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

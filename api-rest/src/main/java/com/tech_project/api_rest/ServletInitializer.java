@@ -1,4 +1,4 @@
-package com.tech_proyect.api_rest;
+package com.tech_project.api_rest;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
