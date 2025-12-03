@@ -33,9 +33,11 @@ Objeto `ProductResponse`.
 
 ``` json
 {
-  "name": "Producto ejemplo",
-  "description": "Descripción del producto",
-  "price": 1000.0
+  "name": "Zanahoria",
+  "price": 50.0,
+  "stock": 100,
+  "description": "Hortaliza"
+  
 }
 ```
 
