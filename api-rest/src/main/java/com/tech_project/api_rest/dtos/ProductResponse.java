@@ -18,9 +18,9 @@ public class ProductResponse {
     private Long id;
     @Column(unique = true)
     private String name;
-    @Positive
+    @Positive( message = "El precio debe ser un valor positivo.")
     private Double price;
-    @PositiveOrZero
+    @PositiveOrZero(message = "El stock no puede ser un valor negativo.")
     private Long stock;
     private String description;
 }

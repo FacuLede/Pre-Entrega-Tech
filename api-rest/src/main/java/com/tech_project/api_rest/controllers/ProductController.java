@@ -1,4 +1,4 @@
-package com.tech_project.api_rest.controlers;
+package com.tech_project.api_rest.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tech_project.api_rest.dtos.ProductRequest;
 import com.tech_project.api_rest.dtos.ProductResponse;
 import com.tech_project.api_rest.services.ProductService;
+
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -39,12 +41,12 @@ public class ProductController {
     }
     
     @PostMapping()
-    public ProductResponse createProduct(@RequestBody ProductRequest product) {
+    public ProductResponse createProduct(@RequestBody @Valid ProductRequest product) {
         return productService.createProduct(product);
     }
 
     @PutMapping("/{id}")
-    public ProductResponse updateProduct(@PathVariable Long id, @RequestBody ProductRequest product) {
+    public ProductResponse updateProduct(@PathVariable Long id, @Valid @RequestBody ProductRequest product) {
         product.setId(id);
         return productService.updateProduct(product);
     }
