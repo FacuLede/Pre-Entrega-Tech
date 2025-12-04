@@ -33,9 +33,11 @@ Objeto `ProductResponse`.
 
 ``` json
 {
-  "name": "Producto ejemplo",
-  "description": "Descripción del producto",
-  "price": 1000.0
+  "name": "Zanahoria",
+  "price": 50.0,
+  "stock": 100,
+  "description": "Hortaliza"
+  
 }
 ```
 
@@ -52,9 +54,10 @@ Objeto `ProductResponse` creado.
 
 ``` json
 {
-  "name": "Nuevo nombre",
-  "description": "Nueva descripción",
-  "price": 1500.0
+  "name": "Zanahoria",
+  "price": 60.0,
+  "stock": 90,
+  "description": "Hortaliza"
 }
 ```
 
@@ -67,5 +70,3 @@ Objeto `ProductResponse` actualizado.
 
 **DELETE** `/api/products/{id}`
 
-**Respuesta:**\
-Código 200 o 204 sin contenido.
