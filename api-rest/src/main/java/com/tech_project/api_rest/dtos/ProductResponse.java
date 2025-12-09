@@ -1,7 +1,5 @@
 package com.tech_project.api_rest.dtos;
 
-
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
@@ -16,7 +14,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ProductResponse {
     private Long id;
-    @Column(unique = true)
     private String name;
     @Positive( message = "El precio debe ser un valor positivo.")
     private Double price;
