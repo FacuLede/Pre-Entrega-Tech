@@ -37,7 +37,6 @@ Objeto `ProductResponse`.
   "price": 50.0,
   "stock": 100,
   "description": "Hortaliza"
-  
 }
 ```
 
@@ -69,4 +68,78 @@ Objeto `ProductResponse` actualizado.
 ### 5. Eliminar un producto
 
 **DELETE** `/api/products/{id}`
+
+------------------------------------------------------------------------
+
+# Order API - Endpoints
+
+Base URL: `/api/orders`
+
+## Endpoints
+
+### 1. Obtener todos los pedidos
+
+**GET** `/api/orders`
+
+**Respuesta:**\
+Lista de `OrderResponse`.
+
+------------------------------------------------------------------------
+
+### 2. Obtener un pedido por ID
+
+**GET** `/api/orders/{id}`
+
+**Parámetros:**\
+- `id` (Long): identificador del pedido.
+
+**Respuesta:**\
+Objeto `OrderResponse`.
+
+------------------------------------------------------------------------
+
+### 3. Crear un pedido
+
+**POST** `/api/orders`
+
+**Body (JSON - OrderRequest):**
+
+``` json
+{
+  "orderDetails": [
+    { "productId": 1, "quantity": 2 },
+    { "productId": 3, "quantity": 1 }
+  ]
+}
+```
+
+**Respuesta:**\
+Objeto `OrderResponse` creado.
+
+------------------------------------------------------------------------
+
+### 4. Actualizar un pedido
+
+**PUT** `/api/orders/{id}`
+
+**Body (JSON - OrderRequest):**
+
+``` json
+{
+  "id": 5,
+  "orderDetails": [
+    { "productId": 1, "quantity": 1 },
+    { "productId": 4, "quantity": 3 }
+  ]
+}
+```
+
+**Respuesta:**\
+Objeto `OrderResponse` actualizado.
+
+------------------------------------------------------------------------
+
+### 5. Eliminar un pedido
+
+**DELETE** `/api/orders/{id}`
 
