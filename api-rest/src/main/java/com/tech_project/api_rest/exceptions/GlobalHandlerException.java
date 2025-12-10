@@ -30,4 +30,13 @@ public class GlobalHandlerException {
         p.setDetail("A database constraint was violated");
         return p;
     }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ProblemDetail handleNotFound(NotFoundException ex) {
+        ProblemDetail p = ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
+        p.setTitle("Resource Not Found");
+        p.setDetail(ex.getMessage());
+        p.setProperty("timestamp", Instant.now());
+        return p;
+    }
 }
