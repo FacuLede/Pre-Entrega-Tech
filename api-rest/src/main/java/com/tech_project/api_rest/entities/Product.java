@@ -29,4 +29,6 @@ public class Product {
     @PositiveOrZero(message = "El stock no puede ser un valor negativo.")
     private Long stock;
     private String description;   
+    private String category;
+    private String image;
 }

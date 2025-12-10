@@ -11,6 +11,8 @@ public class Mapper {
         .price(product.getPrice())
         .stock(product.getStock())
         .description(product.getDescription())
+        .category(product.getCategory())
+        .image(product.getImage())
         .build();
     }
 }

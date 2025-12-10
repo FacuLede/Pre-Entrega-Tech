@@ -42,6 +42,8 @@ public class ProductService {
                 .price(product.getPrice())
                 .stock(product.getStock())
                 .description(product.getDescription())
+                .category(product.getCategory())
+                .image(product.getImage())
                 .build()
             )
         );
@@ -56,6 +58,8 @@ public class ProductService {
         product.setPrice(productRequest.getPrice());
         product.setStock(productRequest.getStock());
         product.setDescription(productRequest.getDescription());
+        product.setCategory(productRequest.getCategory());
+        product.setImage(productRequest.getImage());
 
         return Mapper.toResponse(productRepository.save(product));
     }
